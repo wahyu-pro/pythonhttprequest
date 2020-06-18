@@ -1,51 +1,41 @@
 import requests, datetime
-# class FindEmployees:
-#     url = "https://mul14.github.io/data/employees.json"
-#     def whice_have_salary(self):
-#         respon = requests.get(self.url)
-#         json = respon.json()
-#         result = filter(lambda a: (a['salary'] > 15000000), json)
-#         print(list(result))
 
-    # def which_life_in_Jakarta(self):
-    #     respon = requests.get(self.url)
-    #     json = respon.json()
-    #     rep = filter(lambda a: a['addresses'][0]['city'] == "DKI Jakarta", json)
-    #     print(list(rep))
+class FindEmployees:
+    url = "https://mul14.github.io/data/employees.json"
+    def whice_have_salary(self):
+        respon = requests.get(self.url)
+        json = respon.json()
+        result = filter(lambda a: (a['salary'] > 15000000), json)
+        print(list(result))
 
-#     def whice_have_department(self):
-#         respon = requests.get(self.url)
-#         json = respon.json()
-#         result = filter(lambda a: (a['department']['name'] == "Research and development"), json)
-#         print(list(result))
+    def which_life_in_Jakarta(self):
+        respon = requests.get(self.url)
+        json = respon.json()
+        rep = filter(lambda a: a['addresses'][0]['city'] == "DKI Jakarta", json)
+        print(list(rep))
+
+    def whice_have_department(self):
+        respon = requests.get(self.url)
+        json = respon.json()
+        result = filter(lambda a: (a['department']['name'] == "Research and development"), json)
+        print(list(result))
     
-#     def whice_have_month(self):
-#         respon = requests.get(self.url)
-#         res = respon.json()
-#         result = filter(lambda a: (a['birthday']), res)
-#         obj = []
-#         for i in result:
-#             date_str = i['birthday']
-#             date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d')
-#             month = date_obj.month
-#             obj.append(month)
+    def whice_have_month(self):
+        respon = requests.get(self.url)
+        res = respon.json()
+        result = filter(lambda a: (a['birthday']), res)
+        obj = []
+        for i in result:
+            date_str = i['birthday']
+            date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d')
+            month = date_obj.month
+            obj.append(month)
 
-#         hasil = filter(lambda a: a == 3, obj)
-#         print(list(hasil))
+        hasil = filter(lambda a: a == 3, obj)
+        print(list(hasil))
 
-# fetch = FindEmployees()
-# fetch.whice_have_salary()
-# fetch.which_life_in_Jakarta()
-# fetch.whice_have_month()
-# fetch.whice_have_department()
-
-respon = requests.get("https://mul14.github.io/data/employees.json")
-def func(respon):
-    res = respon.json()
-    rex = map(lambda a: a['presence_list'], res)
-    # rep = map(lambda a: a[0], rex)
-    # print(list(rep))
-    # print(list(rex))
-    
-
-func(respon)
+fetch = FindEmployees()
+fetch.whice_have_salary()
+fetch.which_life_in_Jakarta()
+fetch.whice_have_month()
+fetch.whice_have_department()
