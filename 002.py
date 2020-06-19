@@ -45,8 +45,8 @@ class FindEmployees:
 
 
 fetch = FindEmployees()
-# fetch.whice_have_salary()
-# fetch.which_life_in_Jakarta()
-# fetch.whice_have_month()
-# fetch.whice_have_department()
+fetch.whice_have_salary()
+fetch.which_life_in_Jakarta()
+fetch.whice_have_month()
+fetch.whice_have_department()
 fetch.absence()
