@@ -34,8 +34,19 @@ class FindEmployees:
         hasil = filter(lambda a: a == 3, obj)
         print(list(hasil))
 
+    def absence(self):
+        respon = requests.get(self.url)
+        json = respon.json()
+        rep = lambda a: [x for x in a if datetime.datetime.strptime(x, "%Y-%m-%d").month == 10]
+        # result = list(map(lambda a: "{} {} = {}".format(a["first_name"], a["last_name"], len(a["presence_list"]))), rep)
+        result = list(map(lambda a: "{} {} = {} hari".format(a['first_name'], a['last_name'], len(rep(a['presence_list']))), json))
+        print(result)
+        # print(rep)
+
+
 fetch = FindEmployees()
-fetch.whice_have_salary()
-fetch.which_life_in_Jakarta()
-fetch.whice_have_month()
-fetch.whice_have_department()
+# fetch.whice_have_salary()
+# fetch.which_life_in_Jakarta()
+# fetch.whice_have_month()
+# fetch.whice_have_department()
+fetch.absence()
