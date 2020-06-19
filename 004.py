@@ -29,8 +29,8 @@ class Movie:
 
 
 movie = Movie()
-# movie.get_indonesian_movies()
-# movie.get_popular_movie_2016()
-# movie.get_movie_by_keanureeves()
-# movie.get_movie_by_RobertDowney()
-# movie.get_movie_by_TomHolland()
+movie.get_indonesian_movies()
+movie.get_popular_movie_2016()
+movie.get_movie_by_keanureeves()
+movie.get_movie_by_RobertDowney()
+movie.get_movie_by_TomHolland()
